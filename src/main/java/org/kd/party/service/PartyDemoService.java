@@ -1,4 +1,4 @@
-package org.kd.service;
+package org.kd.party.service;
 
 import org.kd.model.Party;
 import org.springframework.beans.factory.annotation.Autowired;

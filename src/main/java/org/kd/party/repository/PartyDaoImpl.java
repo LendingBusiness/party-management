@@ -1,4 +1,4 @@
-package org.kd.repository;
+package org.kd.party.repository;
 
 import org.kd.model.Party;
 

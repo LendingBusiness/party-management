@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.kd</groupId>
-    <artifactId>LendingBusiness</artifactId>
+    <artifactId>party</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
@@ -22,6 +22,11 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+        </repository>
+        <repository>
+            <id>org.kd</id>
+            <name>common-lending-lib</name>
+            <url>file:C:/Users/KDRZAZGA/.m2/repository</url>
         </repository>
     </repositories>
 
@@ -52,6 +57,11 @@
             <groupId>com.github.jsqlparser</groupId>
             <artifactId>jsqlparser</artifactId>
             <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kd</groupId>
+            <artifactId>common-lending-lib</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

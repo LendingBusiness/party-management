@@ -1,11 +1,14 @@
-package org.kd;
+package org.kd.party;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.kd.model.Fund;
 import org.kd.model.Party;
-import org.kd.service.PartyDemoService;
+import org.kd.party.service.PartyDemoService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import java.util.List;
 
 public class PartyManagementTests {
 
@@ -21,7 +24,13 @@ public class PartyManagementTests {
 
         for (int i = 0; i < parties.length; i++) {
             Assert.assertTrue(parties[i].getName().contains(expectedParties[i]));
-            Assert.assertTrue(parties[i].getFund().getName().contains(expectedFunds[i]));
+            List<Fund> availableFunds = parties[i].getAvailableFunds();
+            boolean fundFound = false;
+            for (Fund availFund : availableFunds) {
+                fundFound = availFund.getName().contains(expectedFunds[i]);
+                if (fundFound) break;
+            }
+            Assert.assertTrue(fundFound);
         }
 
         context.close();

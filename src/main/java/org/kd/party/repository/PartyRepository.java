@@ -1,6 +1,5 @@
-package org.kd.repository;
+package org.kd.party.repository;
 
-import org.kd.model.Fund;
 import org.kd.model.Party;
 import org.springframework.stereotype.Repository;
 
@@ -13,17 +12,16 @@ public class PartyRepository {
     private List<Party> parties = new ArrayList<>();
 
     PartyRepository() {
-        parties.add(new Party("GetinNoble", new Fund("Noble Bond Fund")));
-        parties.add(new Party("PKO SA", new Fund("PKO Stock Fund")));
+        parties.add(new Party("GetinNoble", FundFactory.createFunds(2)));
+        parties.add(new Party("PKO SA", FundFactory.createFunds(8)));
 
     }
 
     public List<Party> getAll() {
-
         return parties;
     }
 
-    public void postParty(String name){
-        parties.add(new Party(name, new Fund("Undefined Fund")));
+    public void postParty(String name) {
+        parties.add(new Party(name, FundFactory.createFunds(4)));
     }
 }

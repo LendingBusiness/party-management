@@ -1,6 +1,5 @@
-package org.kd;
+package org.kd.party;
 
-import org.kd.service.PartyDemoService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

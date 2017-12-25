@@ -1,8 +1,8 @@
-package org.kd.controller;
+package org.kd.party.controller;
 
-import org.kd.PartyManagement;
+import org.kd.party.PartyManagement;
 import org.kd.model.Party;
-import org.kd.repository.PartyRepository;
+import org.kd.party.repository.PartyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,8 +28,7 @@ public class PartyController {
     }
 
     @GetMapping("/exit")
-    public void exitApplication()
-    {
+    public void exitApplication() {
         PartyManagement.getContext().close();
     }
 
