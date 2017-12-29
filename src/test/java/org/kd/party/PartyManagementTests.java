@@ -2,14 +2,17 @@ package org.kd.party;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.kd.model.Fund;
 import org.kd.model.Party;
 import org.kd.party.service.PartyDemoService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+@RunWith(SpringJUnit4ClassRunner.class)
 public class PartyManagementTests {
 
     @Test
@@ -19,6 +22,7 @@ public class PartyManagementTests {
 
         ConfigurableApplicationContext context = SpringApplication.run(PartyManagement.class);
         Party[] parties = context.getBean(PartyDemoService.class).getAllParties();
+        context.close();
 
         Assert.assertEquals(expectedParties.length, parties.length);
 
@@ -33,6 +37,6 @@ public class PartyManagementTests {
             Assert.assertTrue(fundFound);
         }
 
-        context.close();
+
     }
 }
