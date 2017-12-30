@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Arrays;
 
 @Configuration
-public class TestAppConfig extends AppConfig {
+public class TestPartyMgmtAppConfig extends PartyMgmtAppConfig {
 
     @Bean(name = "testFund1")
     public Fund createTestFund1() {
@@ -23,9 +23,9 @@ public class TestAppConfig extends AppConfig {
     @Bean
     public Party createTestParty1() {
         Fund testF1 = createTestFund1();
-        Fund testF2 = createTestFund1();
+        Fund testF2 = createTestFund2();
 
-        return new Party("UBS", Arrays.asList(
+        return new Party("Union Bank of Switzerland", Arrays.asList(
                 testF1, testF2));
 
     }

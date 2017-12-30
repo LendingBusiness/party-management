@@ -49,7 +49,7 @@ public class PartyDaoImpl implements PartyDao {
                 .concat(party.getExternalId())
                 .concat(party.getName())
                 .concat(concatFundNames(party.getAvailableFunds()));
-        return false;
+        return true;
     }
 
     private String concatFundNames(List<Fund> funds) {

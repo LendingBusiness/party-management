@@ -32,8 +32,8 @@ public class PartyController {
         PartyManagement.getContext().close();
     }
 
-    @PostMapping("/postParty/{partyId}")
-    public void postParty(@PathVariable String partyId) {
-        partyRepository.postParty(partyId);
+    @PostMapping("/postParty/{partyName}")
+    public void postParty(@PathVariable String partyName) {
+        partyRepository.postParty(partyName);
     }
 }
