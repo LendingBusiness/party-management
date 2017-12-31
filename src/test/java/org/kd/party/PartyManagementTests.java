@@ -49,6 +49,6 @@ public class PartyManagementTests {
                 context.close();
             }
         }
-        //context.close();
+        context.close();
     }
 }
