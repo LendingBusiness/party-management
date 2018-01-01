@@ -13,7 +13,7 @@ public class RestTemplateConfig {
     private String serverPort;
 
     @Bean
-    public RestTemplate countryRestTemplate(RestTemplateBuilder restTemplateBuilder) {
+    public RestTemplate partyRestTemplate(RestTemplateBuilder restTemplateBuilder) {
         return restTemplateBuilder.rootUri("http://localhost:" + serverPort).build();
     }
 }
