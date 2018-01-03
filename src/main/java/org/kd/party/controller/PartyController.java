@@ -29,7 +29,7 @@ public class PartyController {
 
     @GetMapping("/exit")
     public void exitApplication() {
-        PartyManagement.getContext().close();
+        PartyManagement.stop();
     }
 
     @PostMapping("/postParty/{partyName}")

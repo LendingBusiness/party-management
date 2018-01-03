@@ -24,7 +24,8 @@ public class PartyManagementTests {
         String[] expectedParties = {"GetinNoble", "PKO SA"};
         String[] expectedFunds = {"Noble Fund", "PKO TFI"};
 
-        ConfigurableApplicationContext context = SpringApplication.run(PartyManagement.class);
+        PartyManagement.main(new String[0]);
+        ConfigurableApplicationContext context = PartyManagement.getContext();
         Party[] parties = context.getBean(PartyDemoService.class).getAllParties();
 
         try {

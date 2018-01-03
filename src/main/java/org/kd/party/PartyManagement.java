@@ -1,19 +1,13 @@
 package org.kd.party;
 
-import org.springframework.boot.SpringApplication;
+import org.kd.model.LendingRestApp;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class PartyManagement {
+public class PartyManagement extends LendingRestApp {
 
-	private static ConfigurableApplicationContext context;
+    public static void main(String[] args) {
+        PartyManagement.start(PartyManagement.class);
+    }
 
-	public static void main(String[] args) {
-		context = SpringApplication.run(PartyManagement.class, args);
-	}
-
-	public static ConfigurableApplicationContext getContext() {
-		return context;
-	}
 }
