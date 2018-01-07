@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.kd.model.Fund;
 
-public class FundFactory {
+public class TestFundFactory {
 
     private static int counter = 0;
 
@@ -19,6 +19,9 @@ public class FundFactory {
             new Fund("PZU Fund", 190),
             new Fund("BZWBK Fund", 390)
     };
+
+    private TestFundFactory(){
+    }
 
     public static Fund createFund() {
         return PREDEFINED_FUNDS[counter++ % PREDEFINED_FUNDS.length];

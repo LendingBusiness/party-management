@@ -1,5 +1,6 @@
 package org.kd.party.controller;
 
+import org.kd.controller.LegalEntityController;
 import org.kd.party.PartyManagement;
 import org.kd.model.Party;
 import org.kd.party.repository.PartyRepository;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class PartyController {
+public class PartyController implements LegalEntityController {
 
     @Autowired
     private PartyRepository partyRepository;
@@ -27,13 +28,15 @@ public class PartyController {
         return partyRepository.getAll().get(Integer.valueOf(partyId));
     }
 
+    @Override
     @GetMapping("/exit")
     public void exitApplication() {
         PartyManagement.stop();
     }
 
-    @PostMapping("/postParty/{partyName}")
-    public void postParty(@PathVariable String partyName) {
-        partyRepository.postParty(partyName);
+    @Override
+    @PostMapping("/create/{name}")
+    public void postNew(@PathVariable String name) {
+        partyRepository.create(name);
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PartyManagement extends LendingRestApp {
 
     public static void main(String[] args) {
-        PartyManagement.start(PartyManagement.class);
+        start(PartyManagement.class);
     }
 
 }

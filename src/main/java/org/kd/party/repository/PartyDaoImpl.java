@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class PartyDaoImpl implements PartyDao {
@@ -19,10 +18,10 @@ public class PartyDaoImpl implements PartyDao {
     PreparedStatement stmt;
 
     public Party[] getAll() {
-        ArrayList<Party> countries = new ArrayList<>();
+        ArrayList<Party> parties = new ArrayList<>();
         SQL_QUERY = "SELECT * FROM Party";
 
-        return (Party[]) countries.toArray();
+        return (Party[]) parties.toArray();
     }
 
     @Override
@@ -53,14 +52,13 @@ public class PartyDaoImpl implements PartyDao {
     }
 
     private String concatFundNames(List<Fund> funds) {
-        StringBuilder concatenaded = new StringBuilder(funds.size());
-        Iterator<Fund> fundIterator = funds.iterator();
+        StringBuilder concatenated = new StringBuilder(funds.size());
 
-        while (fundIterator.hasNext()) {
-            concatenaded.append(fundIterator.next().getName().concat(" ,"));
+        for (Fund fund : funds) {
+            concatenated.append(fund.getName().concat(" ,"));
         }
 
-        return concatenaded.toString();
+        return concatenated.toString();
     }
 
     public String getSQL_QUERY() {

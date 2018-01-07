@@ -6,5 +6,6 @@ import java.util.Collection;
 
 public interface PartyManagementService {
 
+
     Collection<Party> getPartiesByExternalReference(String partyExtRef);
 }

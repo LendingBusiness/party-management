@@ -8,7 +8,6 @@ import org.kd.model.Party;
 import org.kd.party.service.PartyDemoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -17,7 +16,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class PartyManagementTests {
 
-    private static Logger logger = LoggerFactory.getLogger(PartyManagementTests.class);
+    private static final Logger logger = LoggerFactory.getLogger(PartyManagementTests.class);
 
     @Test
     public void contextLoads() {

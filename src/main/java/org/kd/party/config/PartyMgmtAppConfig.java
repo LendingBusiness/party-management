@@ -1,6 +1,7 @@
 package org.kd.party.config;
 
 import org.kd.config.AppConfig;
+import org.kd.party.repository.PartyRepository;
 import org.kd.service.LendingRequestWrapper;
 import org.kd.service.ServiceRegistry;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +13,12 @@ class PartyMgmtAppConfig extends AppConfig{
     @Bean(name = "testLendingRequestWrapper")
     public LendingRequestWrapper createTestLendingRequestWrapper() {
         return new LendingRequestWrapper(ServiceRegistry.AppName.PARTY_MANAGEMENT, "/hello/world");
+    }
+
+
+    @Bean
+    public PartyRepository createPartyRepository(){
+        return new PartyRepository();
     }
 
 }
